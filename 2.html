@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <title>Strokeform</title>
+        <link rel="stylesheet" href="style2.css">
+        <script src="2.js"> </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="head">
+                <h1>โรงเรียนพิษณุโลกพิทยาคมและมหาวิทยาลัยนเรศวร</h1>
+            </div>
+            <div class="Notification">
+                <h>โปรดกรอกข้อมูลตามความเป็นจริงเพื่อประสิทธิภาพในการหาความเสี่ยง</h>  
+            </div>
+            <div class="normal-information">
+                <div class="head-normal-information">
+                    <h1>ส่วนที่ 1 ข้อมูลทั่วไป (จำเป็นต้องกรอก)</h1>
+                </div>
+                <div class="body-normal-information">
+                    
+                    <div class="sex-input" data-validate="กรุณาระบุเพศ">
+                        <h>เพศ</h>
+                        <div class="radio-sex">
+                        <label class="radio-inline" style="margin-right: 20px;"><input type="radio" name="gender" value="Male" required>  ชาย</label>&nbsp;&nbsp;
+                        <label class="radio-inline"><input type="radio" name="gender" value="Female">  หญิง</label>
+                        </div>
+                    </div>
+                    
+                    <div class="age" data-validate="กรุณาระบุอายุ">
+                        <h>อายุ</h>
+                        <div class="text-black">
+                            <input type="number" placeholder="กรุณาระบุอายุ " id="age" style="width: 30%; border: 2px solid #e6e6e6;" required>
+                        </div>
+                    </div>
+                    
+                    <div class="weight" data-validate="กรุณาระบุน้ำหนัก">
+                        <h>น้ำหนัก</h>
+                        <div class="text-black">
+                            <input type="number" placeholder="กรุณาระบุน้ำหนัก (กก.)" id="weight" style="width: 30%; border: 2px solid #e6e6e6;" required>
+                        </div>
+                    </div>
+                    
+                    <div class="tall" data-validate="กรุณาระบุส่วนสูง">
+                        <h>ส่วนสูง</h>
+                        <div class="text-black">
+                            <input type="number" placeholder="กรุณาระบุส่วนสูง (cm.)" id="tall" style="width: 30%; border: 2px solid #e6e6e6;" required>
+                        </div>
+                    </div>
+                    
+                <div class="head-real-information">
+                    <h1>ส่วนที่ 2 ข้อมูลความเสี่ยง</h1>
+                </div>
+                <div class="body-real-information">
+                    
+                    <div class="systolic" data-validate="กรุณาระบุความดัน">
+                        <h>ความดัน Systolic (ความดันตัวบน) (จำเป็นต้องกรอก)</h>
+                        <div class="text-black">
+                            <input type="number" placeholder="กรุณาระบุความดัน Systolic (mmHg)" id="systolic" style="width: 30%; border: 2px solid #e6e6e6;" required>
+                        </div>
+                    </div>
+                    
+                    <div class="diastolic" data-validate="กรุณาระบุความดัน2">
+                        <h>ความดัน Diastolic (ความดันตัวล่าง) (ไม่จำเป็นต้องกรอก)</h>
+                        <div class="text-black">
+                            <input type="number" placeholder="กรุณาระบุความดัน diastolic (mmHg)" id="diastolic" style="width: 30%; border: 2px solid #e6e6e6;" required>
+                        </div>
+                    </div>
+                    
+                    <div class="HR" data-validate="กรุณาระบุค่าอัตราการเต้นหัวใจ">
+                        <h>ค่าอัตราการเต้นหัวใจระยะพัก (ไม่จำเป็นต้องกรอก)</h>
+                        <div class="text-black">
+                            <input type="number" placeholder="อัตราการเต้นหัวใจระยะพัก (ครั้ง/นาที)" id="HR" style="width: 32%; border: 2px solid #e6e6e6;" required>
+                        </div>
+                    </div>
+                    
+                    <div class="cholesterol" data-validate="กรุณาระบุค่าไขมัน cholesterol">
+                        <h>ค่าไขมัน Cholesterol ในเลือด (จำเป็นต้องกรอก) </h>
+                        <div class="text-black">
+                            <input type="number" placeholder="ระบุค่าไขมัน cholesterol (mg/dL)" id="cholesterol" style="width: 30%; border: 2px solid #e6e6e6;" required>
+                        </div>
+                    </div>
+                    
+                    <div class="HDL" data-validate="กรุณาระบุค่าไขมัน HDL ">
+                        <h>ค่าไขมัน HDL ในเลือด (ไม่จำเป็นต้องกรอก)</h>
+                        <div class="text-black">
+                            <input type="number" placeholder="กรุณาระบุค่าไขมัน HDL (mg/dL)" id="HDL" style="width: 30%; border: 2px solid #e6e6e6;" required>
+                        </div>
+                    </div>
+                    
+                    <div class="LDL" data-validate="กรุณาระบุค่าไขมัน LDL">
+                        <h>ค่าไขมัน LDL ในเลือด (ไม่จำเป็นต้องกรอก)</h>
+                        <div class="text-black">
+                            <input type="number" placeholder="กรุณาระบุค่าไขมัน (mg/dL)" id="LDL" style="width: 30%; border: 2px solid #e6e6e6;" required>
+                        </div>
+                    </div>
+                    
+                    <div class="sugar" data-validate="กรุณาระบุค่าน้ำตาลในเลือด">
+                        <h>ค่าน้ำตาลในเลือด (จำเป็นต้องกรอก)</h>
+                        <div class="text-black">
+                            <input type="number" placeholder="กรุณาระบุค่าน้ำตาลในเลือด (mg/dL)" id="sugar" style="width: 30%; border: 2px solid #e6e6e6;" required>
+                        </div>
+                    </div>
+                    <div class="smoke-input" data-validate="กรุณาระบุการสูบบุหรี่">
+                        <h>พฤติกรรมการสูบบุหรี่ (จำเป็นต้องกรอก)</h>
+                        <div class="radio-smoke">
+                        <label class="radio-inline" style="margin-right: 20px;"><input type="radio" name="smoke" value="SS" required>สูบบุหรี่</label>&nbsp;&nbsp;
+                       
+                        <label class="radio-inline" style="margin-right: 20px;"><input type="radio" name="smoke" value="S">ไม่เคยสูบบุหรี่</label>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div>
+
+                </div>
+            </div>
+            
+           
+                    
+            </div>
+            <div class="button">
+                <a  href="3.html"  onclick="submitForm()" class="btn" id="btn1">ยืนยันข้อมูล</a>
+
+            </div>
+        </div>
+        
+    </body>
+</html>

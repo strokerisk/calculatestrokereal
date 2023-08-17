@@ -1,0 +1,323 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Poppins:wght@300&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to right, #b3ffab, #12fff7)
+}
+
+.container {   
+    background: #ffffff;
+    width: 800;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40;
+    border-radius: 25px;
+    
+    min-height: 800;
+    margin-bottom: -100;
+    
+    
+    
+   
+}
+
+.backgound-fat-pic {
+    width: 140;
+    height: 140;
+    background:linear-gradient(to right, #b3ffab, #12fff7) ;
+    border-color: black;
+    border-radius: 100px;
+    margin-top: 40;
+    margin-left: 15;
+    float: left;
+    
+    
+}
+
+.fat-pic {
+    width: 145; 
+    margin-left: 3.5; 
+    margin-top: 1;
+}
+
+.text1 {
+    margin-right: 500;
+    float: right;
+    font-family: 'Kanit', sans-serif;
+}
+
+
+
+.backgound-sugar-pic {
+    width: 140;
+    height: 140;
+    background:linear-gradient(to right, #b3ffab, #12fff7) ;
+    border-color: black;
+    border-radius: 100px;
+    margin-top: 80;
+    margin-left: 15;
+    float: left;
+    
+}
+ 
+.sugar-pic {
+    width: 113; 
+    margin-right: 20; 
+    margin-top: 13;
+    float: right;
+}
+
+.text2 {
+    margin-top: 80;
+    margin-right: 441;
+    float: right;
+    font-family: 'Kanit', sans-serif;
+}
+
+
+.show {
+    font-family: 'Kanit', sans-serif;
+    float: left;
+    margin-left: 40;
+    margin-top: -10;
+    background-color: cyan;
+    width: 590;
+    height: auto;
+    border-radius: 10px;
+}
+
+.หัว-bmi {
+    margin-left: 5;
+    margin-bottom: 15;
+}
+
+.bmi {
+    color: red;
+}
+
+.หัว-sugar {
+    margin-left: 5;
+}
+
+.show-sugar {
+    font-family: 'Kanit', sans-serif;
+    float: left ;
+    margin-left: 40 ;
+    margin-top: -10;
+    background-color: aqua;
+    width: 590;
+    border-radius: 10px;
+    
+}
+
+.backgound-lipid-pic {
+    width: 140;
+    height: 140;
+    background:linear-gradient(to right, #b3ffab, #12fff7) ;
+    border-color: black;
+    border-radius: 100px;
+    margin-top: 80;
+    margin-left: 15;
+    float: left;
+}
+
+.text3 {
+    margin-top: 100;
+    margin-right: 335;
+    float: right;
+    font-family: 'Kanit', sans-serif;
+}
+.lipid-pic {
+    width: 100; 
+    margin-right: 20; 
+    margin-top: 30;
+    float: right;
+    border-radius: 10px;
+}
+
+.show3 {
+    font-family: 'Kanit', sans-serif;
+    margin-left: 40 ;
+    margin-top: -10;
+    float: left;
+    background-color: cyan;
+    width: 590;
+    margin-bottom: 50;
+    border-radius: 10px;
+}
+
+.หัว-lipid {
+    margin-left: 5;
+    margin-top: 15;
+}
+
+.textwarning1 {
+    margin-right: 500;
+    float: right;
+    font-family: 'Kanit', sans-serif;
+}
+
+#checky1 {
+    display: none;
+}
+
+.contentwarningbmi {
+    display: none;
+    transition: 0.5s linear;
+    font-size: 14;
+}
+
+.label1 {
+    
+    display: inline-block;
+    margin-top: 10;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+   
+}
+
+#checky1:checked ~ .contentwarningbmi {
+    display: block;
+}
+
+#checky2 {
+    display: none;
+}
+
+.contentwarningsugar {
+    display: none;
+    transition: 0.5s linear;
+    font-size: 14;
+    margin-top:  10;
+}
+
+.label2 {
+    
+    display: inline-block;
+    margin-top: 10;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#checky2:checked ~ .contentwarningsugar {
+    display: block;
+}
+
+#checky3 {
+    display:none;
+}
+
+.contentwarningstroke {
+    display: none;
+    transition: 0.5s linear;
+    font-size: 14;
+    margin-top:  10;
+}
+
+.label3 {
+    
+    display: inline-block;
+    margin-top: 10;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#checky3:checked ~ .contentwarningstroke {
+    display: block;
+}
+
+.hospitalhead {
+    font-family: 'Kanit', sans-serif;
+    margin-left: 30;
+    font-size: 25;
+    margin-top: -20px;
+    
+}
+
+.province {
+    font-family: 'Kanit', sans-serif;
+    margin-left: 30;
+    font-size: 20;
+    margin-top: -10;
+}
+
+.provinceSelect {
+    margin-top: -10;
+    margin-left: 10;
+}
+
+.head {
+    font-family: 'Kanit', sans-serif;
+}
+
+.bodyhos {
+    font-family: 'Kanit', sans-serif;
+    margin-left: 20;
+}
+
+.showhospitalbutton {
+    font-family: 'Kanit', sans-serif;
+}
+
+.pls1 {
+    font-family: 'Kanit', sans-serif;
+}
+
+.pls2 {
+    font-family: 'Kanit', sans-serif;
+}
+
+.containershowhospital {
+    margin-top: 15px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.hospital6 {
+    margin-top: 20px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.hospital5 {
+    margin-top: 20px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.hospital4 {
+    margin-top: 20px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.hospital3 {
+    margin-top: 20px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.hospital2 {
+    margin-top: 20px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.hospital1 {
+    margin-top: 20px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.containershowhospital {
+    margin-left: 30px;
+    margin-bottom: 50px;
+}

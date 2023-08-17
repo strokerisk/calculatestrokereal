@@ -1,0 +1,900 @@
+<html>
+    <head>
+        <head>
+            <title>Strokeform</title>
+            <link rel="stylesheet" href="style3.css">
+            <script src="3.js"> </script>            
+        </head>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text1">โรคอ้วน</h1>
+            <div class="backgound-fat-pic">
+                <div class="pic1" >
+                        <img src="fat.png" class="fat-pic"> 
+                </div>
+            </div>
+            <div class="show">
+                <div class="หัว-bmi">
+                    <input type="checkbox" id="checky1">
+                    <p> 
+                        คุณมีค่า BMI เท่ากับ   <span id="displaybmitext"> </span> ดังนั้น <span  id="displaybmitype" style="color: red;">
+                            <script>
+                                const resultBox2 = document.getElementById("displaybmitype");
+                                 displaybmitype.textContent = bmirisk; 
+                           </script>
+                            </span>
+                        
+                    </p> 
+                    <div class="contentwarningbmi" id="showwarningbmitype">
+                        <script>
+                            const resultBoxCheck1 = document.getElementById("showwarningbmitype");
+                            showwarningbmitype.textContent = bmiwarning; 
+                       </script>
+                    </div>
+                    <label class="label1" for="checky1"> คำแนะนำ</label>
+                </div>
+            </div>
+            <h1 class="text2">โรคเบาหวาน</h1>
+            
+            <div class="show2">
+                <div class="backgound-sugar-pic">
+                    <div class="pic2" >
+                            <img src="sugar.png" class="sugar-pic"> 
+                    </div>
+            </div>
+                <div class="show-sugar">
+                    <div class="หัว-sugar">
+                    <input type="checkbox" id="checky2">
+                     
+                    <p>
+                        <div  id="displaysugartype" style="color: red;">
+                            <script>
+                                const resultBox = document.getElementById("displaysugartype");
+                                 displaysugartype.textContent = diabetesRisk; 
+                           </script>
+                        </div>
+                        <div class="contentwarningsugar" id="showwarningsugartype">
+                            <script>
+                                const resultBoxCheck2 = document.getElementById("showwarningsugartype");
+                                showwarningsugartype.textContent = diabeteswarning; 
+                           </script>
+                        </div>
+                        <label class="label2" for="checky2"> คำแนะนำ</label>
+                    </p>
+                </div>
+
+                </div>
+            </div>
+            <h1 class="text3">โรคหลอดเลือดสมอง</h1>
+            <div class="backgound-lipid-pic">
+                <div class="lipid" >
+                        <img src="stroke2.jpg" class="lipid-pic"> 
+                </div>
+            </div>
+                <div class="show3">
+                    <div class="หัว-lipid">
+                        <input type="checkbox" id="checky3">
+                        ความเสี่ยงต่อการเกิดโรคในระยะเวลา 10 ปีของท่านคือ  <span id="displaystroketext"></span> % 
+                       <p>
+                        
+                         <div id="displaystroketype" style="color: red">
+                            <script>
+                                const resultBox3 = document.getElementById("displaystroketype");
+                                 displaystroketype.textContent = strokerisk; 
+                           </script>
+                         </div>
+                         <div class="contentwarningstroke" id="showwarningstroketype">
+                            
+                            <script>
+                                const resultBoxCheck3 = document.getElementById("showwarningstroketype");
+                                showwarningstroketype.textContent = strokewarning; 
+                           </script>
+                        </div>
+                        <label class="label3" for="checky3"> คำแนะนำ</label>
+                       </p>
+                    </div>
+
+                </div>
+                <h1 class="hospitalhead">ระบบตรวจหาโรงพยาบาลใกล้ๆท่าน</h1>
+              
+
+<div class="bodyhos">
+    <!--จังหวัด -->
+    <label for="province" class="headprovince">จังหวัด:</label>
+    <select id="province" name="province" onchange="displayDistricts()" class="pls1">
+        <option value="">กรุณาเลือก</option>
+        <option value="กรุงเทพฯ">กรุงเทพมหานคร</option>
+       
+        <option value="กาญจนบุรี">กาญจนบุรี</option>
+      
+        <option value="พิษณุโลก">พิษณุโลก</option>
+        <option value="ชลบุรี">ชลบุรี</option>
+    <!-- คุณสามารถเพิ่มตัวเลือกจังหวัดอื่นๆ ต่อท้ายไป -->
+    </select>
+
+    <label for="district" class="headdistrict">อำเภอ:</label>
+    <select id="district" name="district" disabled class="pls2">
+        <option value="" >กรุณาเลือกจังหวัดก่อน</option>
+    </select>
+
+    <button type="button" onclick="displayHospital()" class="showhospitalbutton">แสดงโรงพยาบาล</button>
+</div>
+
+
+
+<div class="containershowhospital">
+    <div>
+        <a href="#" onclick="openNewTab1(); return false;">
+            <label id="hospital1" class="hospital1"></label>
+        </a>  
+    </div>
+    
+    <div>
+        <a href="#" onclick="openNewTab2(); return false;">
+            <label id="hospital2" class="hospital2"></label>
+        </a>
+    </div>
+    
+    <div>
+        <a href="#" onclick="openNewTab3(); return false;">
+            <label id="hospital3" class="hospital3"></label>
+        </a>
+    </div>
+    
+    <div>
+        <a href="#" onclick="openNewTab4(); return false;">
+            <label id="hospital4" class="hospital4"></label>
+        </a>
+    </div>
+    
+    <div>
+        <a href="#" onclick="openNewTab5(); return false;">
+            <label id="hospital5" class="hospital5"></label>
+        </a>
+    </div>
+
+    <div>
+        <a href="#" onclick="openNewTab6(); return false;">
+            <label id="hospital6" class="hospital6"></label>
+        </a>
+    </div>
+
+    <div>
+        <a href="#" onclick="openNewTab7(); return false;">
+            <label id="hospital7" class="hospital7"></label>
+        </a>
+    </div>
+    
+
+</div>
+
+
+
+
+<script>
+
+    
+function displayDistricts() {
+    
+    var province = document.getElementById("province").value;
+    var districtSelect = document.getElementById("district");
+    
+    districtSelect.innerHTML = "";
+    //อำเภอ
+    if (province === "") {
+        districtSelect.disabled = true;
+    } else {
+        districtSelect.disabled = false;
+        // เพิ่มตัวเลือกอำเภอตามจังหวัดที่เลือก
+        if (province === "กรุงเทพฯ") {
+            var huaikwangOption = document.createElement("option");
+            huaikwangOption.text = "ห้วยขวาง";
+            districtSelect.appendChild(huaikwangOption);
+
+            var klongtanOption = document.createElement("option");
+            klongtanOption.text = "คลองเตย";
+            districtSelect.appendChild(klongtanOption);
+
+            var klongsanOption = document.createElement("option");
+            klongsanOption.text = "คลองสาน";
+            districtSelect.appendChild(klongsanOption);
+
+            var jomtongOption = document.createElement("option");
+            jomtongOption.text = "จอมทอง";
+            districtSelect.appendChild(jomtongOption);
+
+            var kannayalOption = document.createElement("option");
+            kannayalOption.text = "คันนายาว";
+            districtSelect.appendChild(kannayalOption);
+
+            var jatujakOption = document.createElement("option");
+            jatujakOption.text = "จตุจักร";
+            districtSelect.appendChild(jatujakOption);
+
+            var dindangOption = document.createElement("option");
+            dindangOption.text = "ดินแดง";
+            districtSelect.appendChild(dindangOption);
+
+            var dusisOption = document.createElement("option");
+            dusisOption.text = "ดุสิต";
+            districtSelect.appendChild(dusisOption);
+
+            var taveeOption = document.createElement("option");
+            taveeOption.text = "ทวีวัฒนา";
+            districtSelect.appendChild(taveeOption);
+
+            var tonburiOption = document.createElement("option");
+            tonburiOption.text = "ธนบุรี";
+            districtSelect.appendChild(tonburiOption);
+
+            var bangkoknoiOption = document.createElement("option");
+            bangkoknoiOption.text = "บางกอกน้อย";
+            districtSelect.appendChild(bangkoknoiOption);
+
+            var bangkapiOption = document.createElement("option");
+            bangkapiOption.text = "บางกระปิ";
+            districtSelect.appendChild(bangkapiOption);
+
+            var bangkungOption = document.createElement("option");
+            bangkungOption.text = "บางขุนเทียน";
+            districtSelect.appendChild(bangkungOption);
+
+            var bangkanOption = document.createElement("option");
+            bangkanOption.text = "บางเขน";
+            districtSelect.appendChild(bangkanOption);
+
+            var bangcareOption = document.createElement("option");
+            bangcareOption.text = "บางแค";
+            districtSelect.appendChild(bangcareOption);
+
+            var bangserOption = document.createElement("option");
+            bangserOption.text = "บางซื่อ";
+            districtSelect.appendChild(bangserOption);
+
+            var bangnaOption = document.createElement("option");
+            bangnaOption.text = "บางนา";
+            districtSelect.appendChild(bangnaOption);
+
+            var bangbonOption = document.createElement("option");
+            bangbonOption.text = "บางบอน";
+            districtSelect.appendChild(bangbonOption);
+
+            var bangpatOption = document.createElement("option");
+            bangpatOption.text = "บางพลัด";
+            districtSelect.appendChild(bangpatOption);
+
+            var pakanongOption = document.createElement("option");
+            pakanongOption.text = "พระโขนง";
+            districtSelect.appendChild(pakanongOption);
+
+            var bangloveOption = document.createElement("option");
+            bangloveOption.text = "บางรัก";
+            districtSelect.appendChild(bangloveOption);
+
+            var bungkumOption = document.createElement("option");
+            bungkumOption.text = "บึงกุ่ม";
+            districtSelect.appendChild(bungkumOption);
+
+            var meenOption = document.createElement("option");
+            meenOption.text = "มีนบุรี";
+            districtSelect.appendChild(meenOption);
+
+            var สวนOption = document.createElement("option");
+            สวนOption.text = "สวนหลวง";
+            districtSelect.appendChild(สวนOption);
+
+            var batumwanOption = document.createElement("option");
+            batumwanOption.text = "ปทุมวัน";
+            districtSelect.appendChild(batumwanOption);
+
+            var wangOption = document.createElement("option");
+            wangOption.text = "วังทองหลาง";
+            districtSelect.appendChild(wangOption);
+
+            var pomOption = document.createElement("option");
+            pomOption.text = "ป้อมปราบ";
+            districtSelect.appendChild(pomOption);
+
+            var paseeOption = document.createElement("option");
+            paseeOption.text = "ภาษีเจริญ";
+            districtSelect.appendChild(paseeOption);
+
+            var tvOption = document.createElement("option");
+            tvOption.text = "ราชเทวี";
+            districtSelect.appendChild(tvOption);
+
+            var payaOption = document.createElement("option");
+            payaOption.text = "พญาไท";
+            districtSelect.appendChild(payaOption);
+
+            var buOption = document.createElement("option");
+            buOption.text = "ราษฎร์บูรณะ";
+            districtSelect.appendChild(buOption);
+
+            var ladOption = document.createElement("option");
+            ladOption.text = "ลาดพร้าว";
+            districtSelect.appendChild(ladOption);
+
+            var aOption = document.createElement("option");
+            aOption.text = "สะพานสูง";
+            districtSelect.appendChild(aOption);
+
+            var bOption = document.createElement("option");
+            bOption.text = "สัมพันธวงศ์";
+            districtSelect.appendChild(bOption);
+
+            var bbOption = document.createElement("option");
+            bbOption.text = "สาทร";
+            districtSelect.appendChild(bbOption);
+
+            var bbbOption = document.createElement("option");
+            bbbOption.text = "สายไหม";
+            districtSelect.appendChild(bbbOption);
+
+            var bbbิOption = document.createElement("option");
+            bbbิOption.text = "หนองแขม";
+            districtSelect.appendChild(bbbิOption);  
+
+            var bbbิbOption = document.createElement("option");
+            bbbิbOption.text = "หลักสี่";
+            districtSelect.appendChild(bbbิbOption); 
+
+        } else if (province === "ภูเก็ต") {
+            var katuOption = document.createElement("option");
+            katuOption.text = "อำเภอกะทู้";
+            districtSelect.appendChild(katuOption);
+
+            var thalangOption = document.createElement("option");
+            thalangOption.text = "อำเภอถลาง";
+            districtSelect.appendChild(thalangOption);
+
+        }else if (province === "กาญจนบุรี") {
+            var eOption = document.createElement("option");
+            eOption.text = "ท่ามะกา";
+            districtSelect.appendChild(eOption);
+
+            var eeOption = document.createElement("option");
+            eeOption.text = "เมือง";
+            districtSelect.appendChild(eeOption);
+
+            var eeeOption = document.createElement("option");
+            eeeOption.text = "สังขละบุรี";
+            districtSelect.appendChild(eeeOption);
+        }else if (province === "ชลบุรี") {
+            var eaOption = document.createElement("option");
+            eaOption.text = "บางละมุง";
+            districtSelect.appendChild(eaOption);
+
+            var eeaOption = document.createElement("option");
+            eeaOption.text = "เมือง";
+            districtSelect.appendChild(eeaOption);
+
+            var eeeaOption = document.createElement("option");
+            eeeaOption.text = "ศรีราชา";
+            districtSelect.appendChild(eeeaOption);
+        }else if (province === "พิษณุโลก") {
+            
+
+            var ppOption = document.createElement("option");
+            ppOption.text = "เมือง";
+            districtSelect.appendChild(ppOption);
+
+            var pppOption = document.createElement("option");
+            pppOption.text = "วัังทอง";
+            districtSelect.appendChild(pppOption);
+        }
+    }
+}
+//โรงพยาบาล
+function displayHospital() {
+    var province = document.getElementById("province").value;
+    var district = document.getElementById("district").value;
+    var hospitalElement1 = document.getElementById("hospital1");
+    var hospitalElement2 = document.getElementById("hospital2");
+    var hospitalElement3 = document.getElementById("hospital3");
+    var hospitalElement4 = document.getElementById("hospital4");
+    var hospitalElement5 = document.getElementById("hospital5");
+    var hospitalElement6 = document.getElementById("hospital6");
+    var hospitalElement7 = document.getElementById("hospital7");
+
+    hospitalElement1.innerHTML = "";
+    hospitalElement2.innerHTML = "";
+    hospitalElement3.innerHTML = "";
+    hospitalElement4.innerHTML = "";
+    hospitalElement5.innerHTML = "";
+    hospitalElement6.innerHTML = "";
+    hospitalElement7.innerHTML = "";
+
+    if (province !== "" && district !== "") {
+        if (province === "กรุงเทพฯ" && district === "ห้วยขวาง") {
+            hospitalElement1.innerHTML = "โรงพยาบาลกรุงเทพ เบอร์โทรติดต่อ 0-2310-3000";//
+            
+        } else if (province === "กรุงเทพฯ" && district === "คลองเตย") {
+            hospitalElement1.innerHTML = "โรงพยาบาลเทพธารินทร์ เบอร์โทรติต่อ 0-2240-2727";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "ราชเทวี") {
+            
+            hospitalElement1.innerHTML = "โรงพยาบาลพญาไท 1 เบอร์โทรติดต่อ 0-2642-7373";//
+            
+          
+        } else if (province === "กรุงเทพฯ" && district === "ปทุมวัน") {
+            hospitalElement1.innerHTML = "สถานพยาบาลเจตนิน เบอร์โทรติต่อ 0-2655-5300-10";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "สาทร") {
+            hospitalElement1.innerHTML = "โรงพยาบาลเซนต์หลุยส์ เบอร์โทรติต่อ 0 2675-5000";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "จอมทอง") {
+            hospitalElement1.innerHTML = "โรงพยาบาลบางปะกอก 9 อินเตอร์เนชั่นแนล เบอร์โทรติดต่อ 0-2877-1111 ";//
+            hospitalElement2.innerHTML = "โรงพยาบาลบางมด เบอร์โทรติดต่อ 0-2867-0606" ;//
+            hospitalElement3.innerHTML = "สถานพยาบาลบางขุนเทียน เบอร์โทรติดต่อ 0-2477-2290-3";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "สายไหม") {
+            hospitalElement1.innerHTML = "โรงพยาบาลบี.แคร์. เมดิคอลเซ็นเตอร์ เบอร์โทรติดต่อ 0 2523 3359-71 ";//
+            hospitalElement2.innerHTML = "โรงพยาบาลสายไหม เบอร์โทรติดต่อ 0-2563-5211" ;//
+            
+          
+        }else if (province === "กรุงเทพฯ" && district === "ราษฎร์บูรณะ") {
+            hospitalElement1.innerHTML = "โรงพยาบาลนวมินทร์2 อินเตอร์เนชั่นแนล เบอร์โทรติดต่อ - ";//
+            hospitalElement2.innerHTML = "โรงพยาบาลบางปะกอก 1 เบอร์โทรติดต่อ 0-2872-1111" ;//
+            hospitalElement3.innerHTML = "โรงพยาบาลราษฎร์บูรณะ เบอร์โทรติดต่อ 0-2427-0175-9";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "ภาษีเจริญ") {
+            hospitalElement1.innerHTML = "โรงพยาบาลบางไผ่ เบอร์โทรติดต่อ 0-2457-0086 ";//
+            hospitalElement2.innerHTML = "โรงพยาบาลพญาไท 3 เบอร์โทรติดต่อ 0-2869-1220-2" ;//
+            hospitalElement3.innerHTML = "สถานพยาบาลเวชกรรมเฉพาะทางอาชีวเวชศาสตร์อินเตอร์เมด  เบอร์โทรติดต่อ 0-2865-0044-8";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "มีนบุรี") {
+            hospitalElement1.innerHTML = "โรงพยาบาลนวมินทร์ เบอร์โทรติดต่อ 0-2918-5080 ";//
+            hospitalElement2.innerHTML = "โรงพยาบาลนวมินทร์ 9 เบอร์โทรติดต่อ 0-2518-1818" ;//
+            hospitalElement3.innerHTML = "โรงพยาบาลเสรีรักษ์ เบอร์โทรติดต่อ 0-2918-9888";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "สวนหลวง") {
+            hospitalElement1.innerHTML = "โรงพยาบาลแพทย์ปัญญา เบอร์โทรติดต่อ 0-2314-0726-9 ";//
+            hospitalElement2.innerHTML = "โรงพยาบาลวิภาราม เบอร์โทรติดต่อ 0 2722 2500-24" ;//
+            hospitalElement3.innerHTML = "โรงพยาบาลสมิติเวชศรีนครินทร์ เบอร์โทรติดต่อ 0 2731 7000-99";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "วัฒนา") {
+            hospitalElement1.innerHTML = "โรงพยาบาลคามิลเลียน เบอร์โทรติดต่อ 0 2391 0136,0 2391 8429 ";//
+            hospitalElement2.innerHTML = "โรงพยาบาลจักษุรัตนิน เบอร์โทรติดต่อ 0 2258 0442-5" ;//
+            hospitalElement3.innerHTML = "โรงพยาบาลบำรุงราษฎร์ 0 2667 1000";//
+            hospitalElement4.innerHTML = "โรงพยาบาลสมิติเวช สาขารัชดาภิเษก เบอร์โทรติดต่อ 0 2392-0011";//
+            hospitalElement5.innerHTML = "โรงพยาบาลสุขุมวิท เบอร์โทรติดต่อ 0 2391 0011,0 27141300 ";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "วังทองหลาง") {
+            hospitalElement1.innerHTML = "โรงพยาบาลลาดพร้าว เบอร์โทรติดต่อ 0 2530 2556 ";//
+            hospitalElement2.innerHTML = "สถานพยาบาลภัสรพิบาลเนอสซิ่งโฮม เบอร์โทรติดต่อ 0-2538-7458" ;//
+            
+          
+        }else if (province === "กรุงเทพฯ" && district === "หนองแขม") {
+            hospitalElement1.innerHTML = "โรงพยาบาลวิชัยเวชอินเตอร์เนชั่นแนล หนองแขม (เดิมชื่อศรีวิชัย 2) เบอร์โทรติดต่อ 0 2807-4044 ";//
+            
+            
+          
+        }else if (province === "กรุงเทพฯ" && district === "จตุจักร") {
+            hospitalElement1.innerHTML = "โรงพยาบาลเมโย เบอร์โทรติดต่อ 0-2579-1770-4";//
+            hospitalElement2.innerHTML = "โรงพยาบาลวิภาวดี เบอร์โทรติดต่อ 0-2561-1258-67";//
+            hospitalElement3.innerHTML = "สถานพยาบาลเดอะซีเนียร์ เบอร์โทรติดต่อ 0-2513-8169-70";//
+            hospitalElement4.innerHTML = "สถานพยาบาลเดอะซีเนียร์ สาขารัชดาภิเษก เบอร์โทรติดต่อ 0-2511-0303";//
+            hospitalElement5.innerHTML = "สถานพยาบาลผู้ป่วยเรื้อรังเดอะซีเนียร์ 3(เปิดใหม่) เบอร์โทรติดต่อ 0-2930-0020 ";//
+          
+        } else if (province === "กรุงเทพฯ" && district === "พญาไท") {
+            hospitalElement1.innerHTML = "โรงพยาบาลการแพทย์วิชัยยุทธ เบอร์โทรติดต่อ 0-2265-7777";//
+            hospitalElement2.innerHTML = "โรงพยาบาลเปาโลเมโมเรียล เบอร์โทรติดต่อ 0-2279-7000";//
+            hospitalElement3.innerHTML = "โรงพยาบาลพญาไท 2 เบอร์โทรติดต่อ 0-2617-2444";//
+            hospitalElement4.innerHTML = "โรงพยาบาลวิชัยยุทธ  สาขารัชดาภิเษก เบอร์โทรติดต่อ 0-2618-6200";//
+            hospitalElement5.innerHTML = "สถานพยาบาลผู้ป่วยเรื้อรังวิชัยยุทธ เบอร์โทรติดต่อ 0-2618-6200 ";//
+            hospitalElement6.innerHTML = "สถานพยาบาลมะเร็งกรุงเทพ เบอร์โทรติดต่อ 0-2785-7162-1 ";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "บางนา") {
+            hospitalElement1.innerHTML = "โรงพยาบาลไทยนครินทร์ เบอร์โทรติดต่อ 0-2361-2727";//
+            hospitalElement2.innerHTML = "โรงพยาบาลบางนา 1 เบอร์โทรติดต่อ 0-2746-8630-38";//
+            hospitalElement3.innerHTML = "โรงพยาบาลมนารมย์ เบอร์โทรติดต่อ 0-2725-9595";//
+            hospitalElement4.innerHTML = "โรงพยาบาลศิครินทร์ สาขารัชดาภิเษก เบอร์โทรติดต่อ 0-2383-4400";//
+            hospitalElement5.innerHTML = "สถานพยาบาลผู้ป่วยเรื้อรังกล้วยน้ำไท 2 เบอร์โทรติดต่อ 0-2399-4260 ";//
+          
+        } else if (province === "กรุงเทพฯ" && district === "คันนายาว") {
+            hospitalElement1.innerHTML = "โรงพยาบาลสินแพทย์ เบอร์โทรติดต่อ 0-2948-5380";//
+          
+        } else if (province === "กรุงเทพฯ" && district === "บึงกุ่ม") {
+            hospitalElement1.innerHTML = "โรงพยาบาลเปาโล เมโมเรียล นวมินทร์(เดิม100ต) เบอร์โทรติดต่อ 0 2944-8015-20";//
+          
+        } else if (province === "กรุงเทพฯ" && district === "พระโขนง") {
+            hospitalElement1.innerHTML = "โรงพยาบาลกล้วยน้ำไท เบอร์โทรติดต่อ 0-2381-2006-20";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "สะพานสูง") {
+            hospitalElement1.innerHTML = "โรงพยาบาลเกษมราษฎร์ สุขาภิบาล 3 เบอร์โทรติดต่อ  0 2729 - 3000";//
+          
+        } else if (province === "กรุงเทพฯ" && district === "สัมพันธวงศ์") {
+            hospitalElement1.innerHTML = "โรงพยาบาลเทียนฟ้ามูลนิธิ เบอร์โทรติดต่อ 0 2237 2190-4";//
+          
+        } else if (province === "กรุงเทพฯ" && district === "ดินแดง") {
+            hospitalElement1.innerHTML = "สถานพยาบาลผู้ป่วยเรื้อรังสุทธิสาร เบอร์โทรติดต่อ 0-2275-6351";//
+          
+        } else if (province === "กรุงเทพฯ" && district === "คลองสาน") {
+            hospitalElement1.innerHTML = "สถานพยาบาลนันอา เบอร์โทรติดต่อ 0-2439-5100-3";//
+          
+        } else if (province === "กรุงเทพฯ" && district === "ดุสิต") {
+            hospitalElement1.innerHTML = "โรงพยาบาลมิชชั่น เบอร์โทรติดต่อ 0-2282-1100";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "ลาดพร้าว") {
+            hospitalElement1.innerHTML = "'โรงพยาบาลเปาโลเมโมเรียล โชคชัย 4 เบอร์โทรติดต่อ 0-2514-2157-9";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "ธนบุรี") {
+            hospitalElement1.innerHTML = "โรงพยาบาลกรุงธน 1 เบอร์โทรติดต่อ 0-2438-0040-5";//
+            hospitalElement2.innerHTML = "โรงพยาบาลเยาวรักษ์ เบอร์โทรติดต่อ 0-2465-5620-2";//
+            hospitalElement3.innerHTML = "สถานพยาบาลรัชดา - ท่าพระ เบอร์โทรติดต่อ 0-2466-0205";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "ทวีวัฒนา") {
+            hospitalElement1.innerHTML = "โรงพยาบาลธนบุรี 2 เบอร์โทรติดต่อ 0-2448-3845";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "บางกอกน้อย") {
+            hospitalElement1.innerHTML = "โรงพยาบาลเจ้าพระยา เบอร์โทรติดต่อ 0-2434-0111";//
+            hospitalElement2.innerHTML = "โรงพยาบาลธนบุรี เบอร์โทรติดต่อ 0-2412-0020";//
+            hospitalElement3.innerHTML = "โรงพยาบาลศรีวิชัย  เบอร์โทรติดต่อ 0-2412-0055-60";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "บางกระปิ") {
+            hospitalElement1.innerHTML = "โรงพยาบาลรามคำแหง เบอร์โทรติดต่อ 0-2374-0200-9";//
+            hospitalElement2.innerHTML = "โรงพยาบาลเวชธานี เบอร์โทรติดต่อ 0-2734-0000";//
+            hospitalElement3.innerHTML = "สถานพยาบาลนวศรีเนอสซิ่งโฮม  เบอร์โทรติดต่อ 0-2718-4866-7";//
+          
+        }else if (province === "กรุงเทพฯ" && district === "บางขุนเทียน") {
+            hospitalElement1.innerHTML = "โรงพยาบาลนครธน เบอร์โทรติดต่อ 0-2416-5454";//
+            hospitalElement2.innerHTML = "โรงพยาบาลพระราม 2 เบอร์โทรติดต่อ 0-2451-4920-30";//
+            
+          
+        }else if (province === "กรุงเทพฯ" && district === "ป้อมปราบ") {
+            hospitalElement1.innerHTML = "สถานพยาบาลผู้ป่วยเรื้อรังกว๋องสิวมูลนิธิ เบอร์โทรติดต่อ 0-2221-8487";//
+            hospitalElement2.innerHTML = "โรงพยาบาลหัวเฉียว เบอร์โทรติดต่อ 0-2223-1351";//
+            
+          
+        }else if (province === "กรุงเทพฯ" && district === "บางบอน") {
+            hospitalElement1.innerHTML = "โรงพยาบาลบางปะกอก 8 เบอร์โทรติดต่อ 0-2894-4111";//
+            hospitalElement2.innerHTML = "สถานพยาบาลบางมด 3 เบอร์โทรติดต่อ 0-2416-8561-2";//
+            hospitalElement3.innerHTML = "สถานพยาบาลเวชกรรมบางปะกอก 2 (เดิมส.พ.บางปะกอก 2 บางบอน)  เบอร์โทรติดต่อ 0-28990-0130-9";//
+            
+          
+        }else if (province === "กรุงเทพฯ" && district === "บางรัก") {
+            hospitalElement1.innerHTML = "โรงพยาบาล บี เอ็น เอช เบอร์โทรติดต่อ 0-2632-0550";//
+            hospitalElement2.innerHTML = "โรงพยาบาลกรุงเทพคริสเตียน เบอร์โทรติดต่อ  0-2233-6981-9";//
+            hospitalElement3.innerHTML = "โรงพยาบาลมเหสักข์ เบอร์โทรติดต่อ 0-2635-7123";//
+            
+          
+        }else if (province === "กรุงเทพฯ" && district === "บางเขน") {
+            hospitalElement1.innerHTML = "โรงพยาบาลเซ็นทรัลเยนเนอรัล เบอร์โทรติดต่อ 0-2552-8777";//
+            hospitalElement2.innerHTML = "สถานพยาบาลพระราม 3 เบอร์โทรติดต่อ 0-2689-8888";//
+            
+          
+        }else if (province === "กรุงเทพฯ" && district === "บางแค") {
+            hospitalElement1.innerHTML = "โรงพยาบาลเกษมราษฎร์บางแค(เดิม500ต) เบอร์โทรติดต่อ 0-2804-8959";//
+            hospitalElement2.innerHTML = "สถานพยาบาลเพชรเกษม - บางแค เบอร์โทรติดต่อ 0-2801-1199";//
+            
+          
+        }else if (province === "กรุงเทพฯ" && district === "บางซื่อ") {
+            hospitalElement1.innerHTML = "โรงพยาบาลเกษมราษฎร์ประชาชื่น เบอร์โทรติดต่อ 0-2910-1600";//
+            hospitalElement2.innerHTML = "โรงพยาบาลบางโพ - บางแค เบอร์โทรติดต่อ 0-2587-0144";//
+            
+          
+        }else if (province === "กรุงเทพฯ" && district === "บางพลัด") {
+            hospitalElement1.innerHTML = "โรงพยาบาลตา  หู  คอ  จมูก เบอร์โทรติดต่อ 0-2412-1950-3";//
+            hospitalElement2.innerHTML = "โรงพยาบาลยันฮี เบอร์โทรติดต่อ 0-2879-0300, 0-2434-9196-99";//
+            
+          
+        }else if (province === "กรุงเทพฯ" && district === "หลักสี่") {
+            hospitalElement1.innerHTML = "โรงพยาบาลมงกุฎวัฒนะ เบอร์โทรติดต่อ 0 2574 5000-9";//
+            hospitalElement2.innerHTML = "สถานพยาบาลชินเขตงามวงศ์วาน เบอร์โทรติดต่อ 0 2580 7426 - 9";//
+            
+          
+        }else if (province === "ภูเก็ต" && district === "อำเภอกะทู้") {
+            hospitalElement1.innerHTML = "โรงพยาบาลกะทู้";
+
+        } else if (province === "ภูเก็ต" && district === "อำเภอถลาง") {
+            hospitalElement1.innerHTML = "โรงพยาบาลถลาง";
+
+        } else if (province === "กาญจนบุรี" && district === "ท่ามะกา") {
+            hospitalElement1.innerHTML = "สถานพยาบาลท่าเรือ เบอร์โทรติดต่อ 0 3456 1084";
+
+        }else if (province === "กาญจนบุรี" && district === "เมือง") {
+            hospitalElement1.innerHTML = "โรงพยาบาลกาญจนบุรีเมโมเรียล เบอร์โทรติดต่อ 0 3462 4141";
+            hospitalElement2.innerHTML = "โรงพยาบาลธนกาญจน์ เบอร์โทรติดต่อ 0 3462 2358";//
+
+        }else if (province === "กาญจนบุรี" && district === "สังขละบุรี") {
+            hospitalElement1.innerHTML = "สถานพยาบาลคริสเตียนแม่น้ำแควน้อย เบอร์โทรติดต่อ 0 3459 5532";
+
+        }else if (province === "ชลบุรี" && district === "บางละมุง") {
+            hospitalElement1.innerHTML = "โรงพยาบาลกรุงเทพพัทยา เบอร์โทรติดต่อ 0 3842 7751-5";
+            hospitalElement2.innerHTML = "โรงพยาบาลพัทยาเมโมเรียล เบอร์โทรติดต่อ 0 384 29422-4";//
+            hospitalElement3.innerHTML = "โรงพยาบาลพัทยาอินเตอร์เนชั่นแนลฮอสพิทอล  เบอร์โทรติดต่อ 0 3842 8374-5";//
+
+        }else if (province === "ชลบุรี" && district === "เมือง") {
+            hospitalElement1.innerHTML = "โรงพยาบาลเอกชล เบอร์โทรติดต่อ 0 3827 3840";
+            hospitalElement2.innerHTML = "โรงพยาบาลเอกชล 2 เบอร์โทรติดต่อ 0 3876 5567";//
+            hospitalElement3.innerHTML = "สถานพยาบาลชลเวช  เบอร์โทรติดต่อ 0 3828 4354-6";//
+
+        }else if (province === "ชลบุรี" && district === "ศรีราชา") {
+            hospitalElement1.innerHTML = "โรงพยาบาลปิยะเวช บ่อวิน เบอร์โทรติดต่อ 0 3834 5200";//
+            hospitalElement2.innerHTML = "โรงพยาบาลพญาไทศรีราชา เบอร์โทรติดต่อ 0 3877 0200-8";//
+            hospitalElement3.innerHTML = "โรงพยาบาลสมิติเวชศรีราชา เบอร์โทรติดต่อ 0 3832 4100-111";//
+            hospitalElement4.innerHTML = "โรงพยาบาลแหลมฉบังอินเตอร์เนชั่นแนล เบอร์โทรติดต่อ 0 3841 0984";//
+            
+          
+        }else if (province === "พิษณุโลก" && district === "เมือง") {
+            hospitalElement1.innerHTML = "โรงพยาบาลพิษณุเวช เบอร์โทรติดต่อ 055 244911";//
+            hospitalElement2.innerHTML = "โรงพยาบาลรวมแพทย์พิษณุโลก เบอร์โทรติดต่อ 055 219307";//
+            hospitalElement3.innerHTML = "โรงพยาบาลอินเตอร์เวชการ เบอร์โทรติดต่อ 055 218777";//
+            hospitalElement4.innerHTML = "โรงพยาบาลรัตนเวช 2 เบอร์โทรติดต่อ 055 210819";//
+            hospitalElement5.innerHTML = "โรงพยาบาลกรุงเทพพิษณุโลก เบอร์โทรติดต่อ 055051724 ";//
+            hospitalElement6.innerHTML = "โรงพยาบาลพุทธชินราช พิษณุโลก เบอร์โทรติดต่อ 055270300 ";//
+          
+        } else if (province === "พิษณุโลก" && district === "วังทอง") {
+            hospitalElement1.innerHTML = "โรงพยาบาลวังทอง เบอร์โทรติดต่อ 055311017";//
+            
+          
+        }// เพิ่มเงื่อนไขสำหรับอำเภอและโรงพยาบาลที่เหลือตามที่คุณต้องการ
+    }
+}
+
+//ลิ้งค์บรรทัด 1 
+function openNewTab1() {
+    var province = document.getElementById("province").value;
+    var district = document.getElementById("district").value;
+            if (province === "กรุงเทพฯ" && district === "ห้วยขวาง") {
+                return window.open('https://goo.gl/maps/7tnVRFSxQKmyfAou9', '_blank');
+
+            } else if (province === "กรุงเทพฯ" && district === "คลองเตย") {
+                return window.open(' https://goo.gl/maps/YDfPhtYHhAvchWvq5 ', '_blank');
+
+            } else if (province === "กรุงเทพฯ" && district === "บึงกุ่ม") {
+                return window.open(' https://goo.gl/maps/6CQ1Zq6nGccafau17 ', '_blank');
+
+            }else if (province === "กรุงเทพฯ" && district === "จอมทอง") {
+                return window.open('https://goo.gl/maps/C5CUJj2CFvmWvc9H8 ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "จตุจักร") {
+                return window.open('  https://goo.gl/maps/LxV1xdtaKJvodKZ18  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "คันนายาว") {
+                return window.open('  https://goo.gl/maps/2xejDSovZ3PdwKuLA  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "ดินแดง") {
+                return window.open('  https://goo.gl/maps/MyzKd1Uigtj7rkhP7  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "ดุสิต") {
+                return window.open('  https://goo.gl/maps/M18hpYRMA2ZE6Ktg8  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "ธนบุรี") {
+                return window.open('  https://goo.gl/maps/h7yve6CGFnjytre67  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "ทวีวัฒนา") {
+                return window.open('  https://goo.gl/maps/SFnvZ3QA7QUeQgkP9  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "บางกอกน้อย") {
+                return window.open('  https://goo.gl/maps/YZxfizcjLfwA2vTP9  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "บางกระปิ") {
+                return window.open('  https://goo.gl/maps/xa7fSmjpG3p7BNdm8  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "บางขุนเทียน") {
+                return window.open('  https://goo.gl/maps/rWKYs3rgjMEpK2pv8  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "คลองสาน") {
+                return window.open('  https://goo.gl/maps/veScx2kTN8K4fQf49  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "บางเขน") {
+                return window.open('  https://goo.gl/maps/zNRCQMH93dA4fUip9  ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางแค") {
+                return window.open('  https://goo.gl/maps/gDde2Bu34SVs3fFbA  ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางซื่อ") {
+                return window.open('  https://goo.gl/maps/t7oJoWUhwFLMf5Sw5 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางนา") {
+                return window.open('  https://goo.gl/maps/GedehGEHfmteKGsn8 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางบอน") {
+                return window.open('  https://goo.gl/maps/qQUUR67zRRV6gjRh9 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางพลัด") {
+                return window.open('  https://goo.gl/maps/K516pQH6U9moQz387 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางรัก") {
+                return window.open('  https://goo.gl/maps/9jXTwdFtZn86U21B8 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "ปทุมวัน") {
+                return window.open('  https://goo.gl/maps/S9NrMneZQtrmYv3c9 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "ป้อมปราบ") {
+                return window.open('  https://goo.gl/maps/W5wdyHHyux1DZxU29 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "พญาไท") {
+                return window.open('  https://goo.gl/maps/QdgR8n4HxND1qK9h9 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "พระโขนง") {
+                return window.open('  https://goo.gl/maps/jrdWqgL4zb4Ktxsg8 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "ภาษีเจริญ") {
+                return window.open('  https://goo.gl/maps/u7KviWT3cbanfi5b8 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "มีนบุรี") {
+                return window.open('  https://goo.gl/maps/GAceng241RxAzsUx8 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "ราชเทวี") {
+                return window.open('  https://goo.gl/maps/dtStqXCHmPoQEUA16 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "ราษฎร์บูรณะ") {
+                return window.open('  https://goo.gl/maps/8X3QaCdcBEoshRor7 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "ลาดพร้าว") {
+                return window.open('  https://goo.gl/maps/MayS5nF5gyJ87d6u5 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "วังทองหลาง") {
+                return window.open('  https://goo.gl/maps/RTrkpR7nNTgU3HP5A', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "วัฒนา") {
+                return window.open('  https://goo.gl/maps/vm7ec7tbZNrN3MiY9', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "สวนหลวง") {
+                return window.open('  https://goo.gl/maps/CLadbG5SUpvBRh1E7', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "สะพานสูง") {
+                return window.open('  https://goo.gl/maps/xY7qFWBFKfcoAVAh7', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "สัมพันธวงศ์") {
+                return window.open('  https://goo.gl/maps/CyiKYgLAo9hghc7HA', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "สาทร") {
+                return window.open('  https://goo.gl/maps/ULEgpaXnfX1jdfDk7', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "สายไหม") {
+                return window.open('  https://goo.gl/maps/F5vFJ74Uwyp7G76k6', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "หนองแขม") {
+                return window.open('  https://goo.gl/maps/HWUF6DvYRq4qXEAz9', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "หลักสี่") {
+                return window.open('  https://goo.gl/maps/J39J8L41wZHqdcHg8', '_blank');
+            }else if (province === "กาญจนบุรี" && district === "ท่ามะกา") {
+                return window.open('  https://goo.gl/maps/Nj8oULocA8pd1JA99', '_blank');
+            }else if (province === "กาญจนบุรี" && district === "เมือง") {
+                return window.open('  https://goo.gl/maps/nUsPGEZWwHcr9yqv9 ', '_blank');
+            }else if (province === "กาญจนบุรี" && district === "สังขละบุรี") {
+                return window.open('  https://goo.gl/maps/eDCyr3MBzNmF5D8g8 ', '_blank');
+            }else if (province === "ชลบุรี" && district === "บางละมุง") {
+                return window.open('  https://goo.gl/maps/3Uiq64RobfV4oNhS6 ', '_blank');
+            }else if (province === "ชลบุรี" && district === "เมือง") {
+                return window.open('  https://goo.gl/maps/eMrVgsaWEHDWhM6x9 ', '_blank');
+            }else if (province === "ชลบุรี" && district === "ศรีราชา") {
+                return window.open('  https://goo.gl/maps/yMVyGNW32SyeoeTJA ', '_blank');
+          
+            }else if (province === "พิษณุโลก" && district === "เมือง") {
+                return window.open('  https://goo.gl/maps/XAEbaNu6VoZTKVDa8', '_blank');
+            }else if (province === "พิษณุโลก" && district === "วังทอง") {
+                return window.open('  https://goo.gl/maps/RsFjoMJu6efcGZ5c7', '_blank');
+            }
+            
+            // สามารถเพิ่มเงื่อนไขในการคืนค่าลิงค์ตามต้องการเพิ่มเติม
+        }
+//ลิ้งบรรทัด 2
+function openNewTab2() {
+    var province = document.getElementById("province").value;
+    var district = document.getElementById("district").value;
+            if (province === "กรุงเทพฯ" && district === "จอมทอง") {
+                return window.open('  https://goo.gl/maps/5MMnQkeNtwK3wRs7A  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "จตุจักร") {
+                return window.open(' https://goo.gl/maps/T1wtu5CaENm8McTD7  ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "ธนบุรี") {
+                return window.open(' https://goo.gl/maps/Fy7Fz5KXymGVXTRNA  ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางกระปิ") {
+                return window.open(' https://goo.gl/maps/exKrQxvaCDWL5xoR7  ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางขุนเทียน") {
+                return window.open(' https://goo.gl/maps/8xkeb1uaEpj1gArX6  ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางกอกน้อย") {
+                return window.open(' https://goo.gl/maps/yFqKpNy8WhcJuCaX7  ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางเขน") {
+                return window.open(' https://goo.gl/maps/TGP8XmUnyEHWpU746  ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางแค") {
+                return window.open('  https://goo.gl/maps/dGhe4UBCA5JYnt2r7  ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางซื่อ") {
+                return window.open('  https://goo.gl/maps/rJTMBJFnJkWJ34gp7  ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางนา") {
+                return window.open('  https://goo.gl/maps/8E6JYB2oat8w2ZcL6 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางบอน") {
+                return window.open('  https://goo.gl/maps/B6eKTR8P7pc5bqYu5', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางพลัด") {
+                return window.open('  https://goo.gl/maps/yy47E8M1dWpnUiVd8', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางรัก") {
+                return window.open('  https://goo.gl/maps/BGrGsfA8YkJFiepY7 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "ป้อมปราบ") {
+                return window.open('  https://goo.gl/maps/ggfBREXvZjSH3xkp6 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "พญาไท") {
+                return window.open('  https://goo.gl/maps/f5tJwUFP1CLuEMEr5 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "ภาษีเจริญ") {
+                return window.open('  https://goo.gl/maps/VLRpQ1GGCSEavgR36 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "มีนบุรี") {
+                return window.open('  https://goo.gl/maps/86juaWJp6NziE1h29 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "ราษฎร์บูรณะ") {
+                return window.open('  https://goo.gl/maps/6Z3gwyLPTJaSjtQG8', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "วังทองหลาง") {
+                return window.open('  https://goo.gl/maps/2HX48LAPyt9aEdEWA ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "วัฒนา") {
+                return window.open('  https://goo.gl/maps/dX4MkfmtXovXEDNF6', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "สวนหลวง") {
+                return window.open('  https://goo.gl/maps/vLsMGjzASJgEZZo77', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "สายไหม") {
+                return window.open('  https://goo.gl/maps/ufaHe8uJUDYzhWRx5', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "หลักสี่") {
+                return window.open('  https://goo.gl/maps/voibCaVWx4SAFF8y6', '_blank');
+            }else if (province === "กาญจนบุรี" && district === "เมือง") {
+                return window.open('  https://goo.gl/maps/6XJz3xahwfRnbK1X8 ', '_blank');
+            }else if (province === "ชลบุรี" && district === "บางละมุง") {
+                return window.open('  https://goo.gl/maps/qzBKqqZRgpp1sHeq5 ', '_blank');
+            }else if (province === "ชลบุรี" && district === "เมือง") {
+                return window.open('  https://goo.gl/maps/32vEaWfvGz6TV9MJ8 ', '_blank');
+            }else if (province === "ชลบุรี" && district === "ศรีราชา") {
+                return window.open('  https://goo.gl/maps/FC1nU8EkuEj7TPp16 ', '_blank');
+          
+            }else if (province === "พิษณุโลก" && district === "เมือง") {
+                return window.open('  https://goo.gl/maps/xNHS1HjqzduREts77', '_blank');
+            }
+            // สามารถเพิ่มเงื่อนไขในการคืนค่าลิงค์ตามต้องการเพิ่มเติม
+        }
+//ลิ้งบรรทัด 3
+function openNewTab3() {
+    var province = document.getElementById("province").value;
+    var district = document.getElementById("district").value;
+        if (province === "กรุงเทพฯ" && district === "จอมทอง") {
+                return window.open(' https://goo.gl/maps/vDCfuVsUsRkfeWUQA  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "จตุจักร") {
+                return window.open(' https://goo.gl/maps/a1B3WZ6nE11uMiAV6  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "ธนบุรี") {
+                return window.open(' https://goo.gl/maps/BRf8XVktvYmkzDFw6  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "บางกระปิ") {
+                return window.open(' https://goo.gl/maps/WypH91cq6kjHWWas7  ', '_blank');
+            }  else if (province === "กรุงเทพฯ" && district === "บางขุนเทียน") {
+                return window.open(' https://goo.gl/maps/BRf8XVktvYmkzDFw6  ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางกอกน้อย") {
+                return window.open(' https://goo.gl/maps/CD6JU71oJpspuCvv7  ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางนา") {
+                return window.open('  https://goo.gl/maps/3UuLoc9H1GvhgrHR6', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางบอน") {
+                return window.open('  https://goo.gl/maps/Pwwch2EDER3E1rfF9', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "บางรัก") {
+                return window.open('  https://goo.gl/maps/NBovEdx5pmTGhZuv7 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "พญาไท") {
+                return window.open('  https://goo.gl/maps/hAoAPQnquvroK7Ng6 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "ภาษีเจริญ") {
+                return window.open('  https://goo.gl/maps/1KrSLqjenMg1K63BA ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "มีนบุรี") {
+                return window.open('  https://goo.gl/maps/XHvosavdG1ircoQ67 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "ราษฎร์บูรณะ") {
+                return window.open('  https://goo.gl/maps/WBHN5vMMi3RBuy1c9 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "วัฒนา") {
+                return window.open('  https://goo.gl/maps/1zvGoxEfAn2xBfEv5', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "สวนหลวง") {
+                return window.open('  https://goo.gl/maps/vBygFMYigAxL1Fz17', '_blank');
+            }else if (province === "ชลบุรี" && district === "บางละมุง") {
+                return window.open('  https://goo.gl/maps/HUA8cAGLNj69KwY9A ', '_blank');
+            }else if (province === "ชลบุรี" && district === "เมือง") {
+                return window.open('  https://goo.gl/maps/ufpobNC52JiuChaX6 ', '_blank');
+            }else if (province === "ชลบุรี" && district === "ศรีราชา") {
+                return window.open('  https://goo.gl/maps/GpmdS7cCyykeeLweA ', '_blank');
+          
+            }else if (province === "พิษณุโลก" && district === "เมือง") {
+                return window.open('  https://goo.gl/maps/iWPfkN8WYKo3pqLP8', '_blank');
+            }
+        }
+//ลิ้งบรรทัด 4
+function openNewTab4() {
+    var province = document.getElementById("province").value;
+    var district = document.getElementById("district").value;
+    if (province === "กรุงเทพฯ" && district === "จตุจักร") {
+                return window.open(' https://goo.gl/maps/t9Kgpm73odrXtqbQ9  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "บางนา") {
+                return window.open('  https://goo.gl/maps/RyxPPDkuqNPJ3fDA7 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "พญาไท") {
+                return window.open('  https://goo.gl/maps/ZaVYhUZfjwZVssn87 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "วัฒนา") {
+                return window.open('  https://goo.gl/maps/6rYqH9eLjTJy7vvz9', '_blank');
+            }else if (province === "ชลบุรี" && district === "ศรีราชา") {
+                return window.open('  https://goo.gl/maps/SvqbwhxvvheR3Sc6A ', '_blank');
+          
+            }else if (province === "พิษณุโลก" && district === "เมือง") {
+                return window.open('  https://goo.gl/maps/sEBoVZp9iZF7mYpc8', '_blank');
+            }
+        }
+//ลิ้งบรรทัด 5
+function openNewTab5() {
+    var province = document.getElementById("province").value;
+    var district = document.getElementById("district").value;
+    if (province === "กรุงเทพฯ" && district === "จตุจักร") {
+                return window.open(' https://goo.gl/maps/W4wsA1qKHzjqaGzRA  ', '_blank');
+            } else if (province === "กรุงเทพฯ" && district === "บางนา") {
+                return window.open('  https://goo.gl/maps/KErNSivUiGoe9oVe8 ', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "พญาไท") {
+                return window.open('  https://goo.gl/maps/2paL66vbCB9ZTnT68', '_blank');
+            }else if (province === "กรุงเทพฯ" && district === "วัฒนา") {
+                return window.open('  https://goo.gl/maps/mRVqWNAPFYthbh818', '_blank');
+            }else if (province === "พิษณุโลก" && district === "เมือง") {
+                return window.open('  https://goo.gl/maps/RbJDFom1Lde3RGoo9', '_blank');
+            }
+        }
+function openNewTab6() {
+    var province = document.getElementById("province").value;
+    var district = document.getElementById("district").value;
+        if (province === "กรุงเทพฯ" && district === "พญาไท") {
+                return window.open(' https://goo.gl/maps/qBKcNkaD8XfQPWBx8  ', '_blank');
+            } else if (province === "พิษณุโลก" && district === "เมือง") {
+                return window.open('  https://goo.gl/maps/czr7Qo6rDntjj9tT7', '_blank');
+            }
+}
+
+</script>
+        </div>
+    </body>
+</html>

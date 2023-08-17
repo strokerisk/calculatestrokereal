@@ -1,0 +1,106 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Poppins:wght@300&display=swap');
+body {
+    min-height: 100vh;
+    background: linear-gradient(to right, #b3ffab, #12fff7)
+    
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.stroke-header {
+    font-family: 'Kanit', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30;
+    margin-right: 30;
+}
+
+.container {
+    background: #ffffff;
+    width: 700;
+    height: 400;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: +250;
+    border-radius: 25px;
+    
+}
+
+.next-page {
+    box-shadow: inset 0 0 0 3.5px #12fff7;
+    color: black;
+    transition: color 0.25s 0.0833333333s;
+    position: relative;
+    border-radius: 10px;
+   
+  }
+  .next-page::before, .next-page::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    border-radius: 10px;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .next-page::before {
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+  }
+  .next-page::after {
+    border-top-width: 4px;
+    border-right-width: 4px;
+  }
+  .next-page:hover {
+    color: black;
+  }
+  .next-page:hover::before, .next-page:hover::after {
+    border-color: #b3ffab;
+    transition: border-color 0s, width 0.25s, height 0.25s;
+    width: 100%;
+    height: 100%;
+  }
+  .next-page:hover::before {
+    transition-delay: 0s, 0s, 0.25s;
+  }
+  .next-page:hover::after {
+    transition-delay: 0s, 0.25s, 0s;
+  }
+  
+  .next-page {
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1.5;
+    font: 300 1.2rem 'Kanit', sans-serif;
+    padding: 1em 2em;
+    letter-spacing: 0.05rem;
+  }
+  .next-page:focus {
+    outline: 2px dotted #55d7dc;
+  }
+
+  .next-page {
+      margin-top: -10;
+      margin-left: 250;
+      margin-right: 250;
+      text-decoration: none;
+      
+  }
+
+
+
+

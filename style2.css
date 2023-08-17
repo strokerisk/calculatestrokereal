@@ -1,0 +1,176 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Poppins:wght@300&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to right, #b3ffab, #12fff7)
+}
+
+.container {   
+    background: #ffffff;
+    width: 800;
+    height: 1175;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: +50;
+    border-radius: 25px;
+}
+
+.head {
+    font-family: 'Kanit', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Notification {
+    font-family: 'Kanit', sans-serif;
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -15;
+}
+
+.normal-information {
+    font-family: 'Kanit', sans-serif;
+}
+
+.head-normal-information {
+    margin-left: 25;
+    margin-top: -15;
+}
+
+.body-normal-information {
+     margin-left: 15;
+     margin-top: -20;
+}
+
+.head-real-information {
+    margin-left: 10;
+    margin-top: -15;
+}
+
+.body-real-information {
+    margin-top: -15;
+}
+
+.head-list-information {
+    margin-left: 27;
+    margin-top: -15;
+}
+
+.body-list-information {
+    margin-left: 15;
+    margin-top: -20;
+}
+
+.smoke-input {
+    margin-top: 10;
+}
+
+.button {
+  margin-top: 35;
+}
+
+.btn {
+  box-shadow: inset 0 0 0 3.5px #12fff7;
+  color: black;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-left: 18;
+}
+.btn::before, .btn::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  border-radius: 10px;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+.btn::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+.btn::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+.btn:hover {
+  color: black;
+}
+.btn:hover::before, .btn:hover::after {
+  border-color: #b3ffab;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+.btn:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+.btn:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 300 1.2rem 'Kanit', sans-serif;
+  padding: 1em 2em;
+  letter-spacing: 0.05rem;
+}
+.btn:focus {
+  outline: 2px dotted #55d7dc;
+}
+
+
+  
+
+.age {
+  margin-top: 5;
+}
+
+.tall {
+  margin-top: 5;
+}
+
+.systolic {
+  margin-top: 5;
+}
+
+.diastolic {
+  margin-top: 5;
+}
+
+.HR {
+  margin-top: 5;
+}
+
+.cholesterol {
+  margin-top: 5;
+}
+
+.HDL {
+  margin-top: 5;
+}
+
+.LDL {
+  margin-top: 5;
+}
+
+.sugar {
+  margin-top: 5;
+}
